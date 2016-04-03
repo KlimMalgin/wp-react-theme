@@ -36,6 +36,17 @@ class App extends Component {
       <Sidebar>sidebar block</Sidebar>
       <Content>
         <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        
       </Content>
       <Page photos={page.photos} year={page.year} setYear={setYear} />
       <User name={user.name} />
