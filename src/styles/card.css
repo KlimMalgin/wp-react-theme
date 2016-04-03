@@ -6,6 +6,8 @@
     border-radius: 5px;
     overflow: hidden;
     color: #a1a9ae;
+    display: inline-block;
+    margin: 0 8px 4px 0;
 }
 
 .card__body {
@@ -17,24 +19,7 @@
     margin: 7px 0 4px 0;
 }
 
-.card__user {
-    margin-bottom: 4px;
-}
-
-.card__user-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
-    display: inline-block;
-    overflow: hidden;
-    
-}
-
-.card__user-name {
-    display: inline-block;
-    padding: 10px 10px;
-    vertical-align: top;
-    font-weight: bold;
+.card__info .avatar__caption {
     color: #4b75a5;
 }
 

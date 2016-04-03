@@ -46,6 +46,10 @@ class App extends Component {
         <Card data={cardData} />
         <Card data={cardData} />
         <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
+        <Card data={cardData} />
         
       </Content>
       <Page photos={page.photos} year={page.year} setYear={setYear} />

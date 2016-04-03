@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import Separator from './Separator'
+import Avatar from './Avatar'
 
 import FontAwesome from 'react-fontawesome'
 
@@ -9,14 +10,7 @@ export default class Card extends Component {
     return <div className='card'>
         <div className='card__body'>
             <div className='card__info'>
-                <div className='card__user'>
-                    <div className='card__user-avatar'>
-                        <img src={user.avatar} />
-                    </div>
-                    <div className='card__user-name'>
-                        {user.name}
-                    </div>
-                </div>
+                <Avatar url={user.avatar} size='min' imgInline textInline>{user.name}</Avatar>
             </div>
             <Separator />
             <div className='card__content'>

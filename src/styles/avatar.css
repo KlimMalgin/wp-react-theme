@@ -1,0 +1,45 @@
+
+
+/*.card__user {
+    margin-bottom: 4px;
+}
+
+.card__user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    display: inline-block;
+    overflow: hidden;
+    
+}
+
+.card__user-name {
+    display: inline-block;
+    padding: 10px 10px;
+    vertical-align: top;
+    font-weight: bold;
+    color: #4b75a5;
+}*/
+
+.avatar {}
+
+.avatar__image-wrapper {
+    overflow: hidden;
+}
+.avatar__image-wrapper._inline {
+    display: inline-block;
+}
+.avatar__image-wrapper._min {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+}
+
+.avatar__caption._inline {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 10px;
+    font-weight: bold;
+}
+
+
