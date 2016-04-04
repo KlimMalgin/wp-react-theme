@@ -4,9 +4,12 @@ import React, { Component } from 'react'
 
 //import { Navbar } from 'react-bootstrap';
 
+import UserHead from '../components/UserHead'
+
 export default class Content extends Component {
     render () {
         return <div className='content'>
+            <UserHead />
             <div className='container-fluid'>
                 {this.props.children}
             </div>

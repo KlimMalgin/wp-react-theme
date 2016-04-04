@@ -1,0 +1,18 @@
+
+
+.userhead {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.userhead__cover {
+    position: absolute;
+    top:0;left:0;right:0;bottom:0;
+    width: inherit;
+    height: inherit;
+}
+
+.userhead__backimage {
+    background: url('http://wallpaperscraft.ru/image/peyzazh_cherno-belye_derevya_oblaka_serost_51968_1920x1080.jpg') no-repeat;
+}
