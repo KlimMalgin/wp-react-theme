@@ -34,6 +34,11 @@
     height: 32px;
     border-radius: 16px;
 }
+.avatar__image-wrapper._medium {
+    width: 96px;
+    height: 96px;
+    border-radius: 48px;
+}
 
 .avatar__caption._inline {
     display: inline-block;

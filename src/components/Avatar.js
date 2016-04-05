@@ -3,13 +3,14 @@ import classNames from 'classnames'
 
 export default class Avatar extends Component {
   render() {
-    const { url, imgInline, textInline, size } = this.props
+    const { data, imgInline, textInline, size } = this.props
     const captionDisplay = !this.props.children ? {
         display: 'none'
     } : {}
     const imageCls = classNames({
         'avatar__image-wrapper': true,
         _min: size == 'min',
+        _medium: size == 'medium',
         _inline: !!imgInline
     })
     const textCls = classNames({
@@ -18,7 +19,7 @@ export default class Avatar extends Component {
     })
     return <div className='avatar'>
         <div className={imageCls}>
-            <img src={url} className='avatar__image' />
+            <img src={data.urls[size]} className='avatar__image' />
         </div>
         <div className={textCls} style={captionDisplay}>
             {this.props.children}
@@ -28,7 +29,7 @@ export default class Avatar extends Component {
 }
 
 Avatar.propTypes = {
-  url: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
   imgInline: PropTypes.bool,
   textInline: PropTypes.bool,
   size: PropTypes.string.isRequired     // 'min', 'small', etc.

@@ -10,7 +10,7 @@ export default class Card extends Component {
     return <div className='card'>
         <div className='card__body'>
             <div className='card__info'>
-                <Avatar url={user.avatar} size='min' imgInline textInline>{user.name}</Avatar>
+                <Avatar data={user.avatar} size='min' imgInline textInline>{user.name}</Avatar>
             </div>
             <Separator />
             <div className='card__content'>

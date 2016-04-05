@@ -19,7 +19,12 @@ class App extends Component {
 
     const cardData = {
       user: {
-        avatar: 'http://placehold.it/32x32',
+        avatar: {
+          urls: {
+            min: 'http://placehold.it/32x32',
+            medium: 'http://placehold.it/96x96'
+          }
+        },
         name: 'User Name'
       },
       data: {

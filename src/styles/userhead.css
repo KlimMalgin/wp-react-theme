@@ -11,8 +11,47 @@
     top:0;left:0;right:0;bottom:0;
     width: inherit;
     height: inherit;
+    overflow: hidden;
 }
 
 .userhead__backimage {
-    background: url('http://wallpaperscraft.ru/image/peyzazh_cherno-belye_derevya_oblaka_serost_51968_1920x1080.jpg') no-repeat;
+    overflow: hidden;
+    /*background: url('http://wallpaperscraft.ru/image/peyzazh_cherno-belye_derevya_oblaka_serost_51968_1920x1080.jpg') no-repeat;*/
+}
+
+.userhead__image {
+    width: 100%;
+    min-height: 100%;
+}
+
+.userhead__image._blur {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px); 
+    -ms-filter: blur(10px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');
+    -webkit-filter: blur(10px);
+}
+
+.userhead__image._blur .userhead__image {
+    width: auto;
+    min-height: 100%;
+}
+
+.userhead__info {
+    position: absolute;
+    right: 0;
+    width: 245px;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.userhead__info .avatar {
+    position: relative;
+    display: inline-block;
+    margin-top: 53px;
+    z-index: 5;
 }
