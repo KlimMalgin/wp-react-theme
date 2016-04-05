@@ -56,3 +56,10 @@
     margin-top: 53px;
     z-index: 5;
 }
+
+.userhead__info .avatar__caption {
+    color: aliceblue;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    margin-top: 16px;
+    font-size: 18px;
+}
