@@ -18,15 +18,7 @@ class App extends Component {
     const { setYear } = this.props.pageActions
 
     const cardData = {
-      user: {
-        avatar: {
-          urls: {
-            min: 'http://placehold.it/32x32',
-            medium: 'http://placehold.it/96x96'
-          }
-        },
-        name: 'User Name'
-      },
+      user: user,
       data: {
         text: 'Some text Some text Some text Some text Some text Some text Some text Some text Some'
       },
