@@ -5,3 +5,7 @@
     z-index: 2030;
     border: 0;
 }
+
+.header .container {
+    text-align: right;
+}

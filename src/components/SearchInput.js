@@ -9,12 +9,12 @@ export default class Search extends Component {
       }
   }
 
-  validationState() {
+  /*validationState() {
     let length = this.state.value.length;
     if (length > 10) return 'success';
     else if (length > 5) return 'warning';
     else if (length > 0) return 'error';
-  }
+  }*/
 
   handleChange() {
     // This could also be done using ReactLink:
@@ -28,9 +28,10 @@ export default class Search extends Component {
     return (
       <Input
         type='text'
+        groupClassName='search-input'
         value={this.state.value}
-        placeholder='Enter text'
-        bsStyle={this.validationState()}
+        placeholder='Search'
+        bsSize='small'
         ref='input'
         onChange={() => this.handleChange()} />
     );
