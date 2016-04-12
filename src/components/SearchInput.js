@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Input } from 'react-bootstrap';
-
+import { Input } from 'react-bootstrap'
+import cs from 'classnames'
 export default class Search extends Component {
   constructor (props) {
       super(props)
       this.state = {
-          value: ''
+          value: '',
+          active: false
       }
   }
 
@@ -24,15 +25,34 @@ export default class Search extends Component {
     });
   }
 
+  handleFocus() {
+    this.setState({
+      active: true
+    });
+  }
+
+  handleBlur() {
+    this.setState({
+      active: false
+    });
+  }
+
   render() {
+    const groupCls = cs({
+      'search-input': true,
+      active: this.state.active
+    })
+    
     return (
       <Input
         type='text'
-        groupClassName='search-input'
+        groupClassName={groupCls}
         value={this.state.value}
         placeholder='Search'
         bsSize='small'
         ref='input'
+        onFocus={() => this.handleFocus()}
+        onBlur={() => this.handleBlur()}
         onChange={() => this.handleChange()} />
     );
   }

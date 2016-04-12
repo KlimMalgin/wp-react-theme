@@ -3,8 +3,14 @@
 .search-input {
     width: 250px;
     margin: 0;
-    padding: 10px 0;
+    padding: 10px 10px;
     display: inline-block;
+    transition: width 0.3s ease-out 0s;
+}
+
+.search-input.active {
+    width: 550px;
+    background-color: #6188B3;
 }
 
 .search-input input {
