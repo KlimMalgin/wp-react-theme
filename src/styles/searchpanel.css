@@ -1,0 +1,7 @@
+
+.search-panel {
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    border: solid 1px #ccc;
+}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import User from '../components/User'
-import Page from '../components/Page'
+/*import User from '../components/User'
+import Page from '../components/Page'*/
 
 import Sidebar from './Sidebar'
 import Content from './Content'
@@ -14,9 +14,8 @@ import * as pageActions from '../actions/PageActions'
 
 class App extends Component {
   render() {
-    const { user, page } = this.props
-    const { setYear } = this.props.pageActions
-
+    const { user, search } = this.props
+    
     const cardData = {
       user: user,
       data: {
@@ -30,7 +29,7 @@ class App extends Component {
     }
 
     return <div>
-      <Header>some header</Header>
+      <Header search={search}>some header</Header>
       <Sidebar>sidebar block</Sidebar>
       <Content>
         <Card data={cardData} />
@@ -50,8 +49,6 @@ class App extends Component {
         <Card data={cardData} />
         
       </Content>
-      <Page photos={page.photos} year={page.year} setYear={setYear} />
-      <User name={user.name} />
     </div>
   }
 }
@@ -59,7 +56,8 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     user: state.user,
-    page: state.page
+    page: state.page,
+    search: state.search
   }
 }
 
