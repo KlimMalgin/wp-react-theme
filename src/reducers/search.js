@@ -7,7 +7,7 @@ const initialState = {
      * alphabet - по алфавиту (Буквы алфавита как заголовки разделов с тегами)
      */
     sortType: 'alphabet', 
-    alphabet: [/* Тут надо английский алфавит */],
+    alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K'],   /* Тут надо английский алфавит */
     tags: [
         {
             name: 'tag1'
