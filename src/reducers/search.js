@@ -10,16 +10,22 @@ const initialState = {
     alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K'],   /* Тут надо английский алфавит */
     tags: [
         {
-            name: 'tag1'
+            name: 'Rock'
         },
         {
-            name: 'tag2'
+            name: 'Drum\'n\'Base'
         },
         {
-            name: 'tag3'
+            name: 'Relax'
         },
         {
-            name: 'tag4'
+            name: 'Classic'
+        },
+        {
+            name: 'Electronic'
+        },
+        {
+            name: 'Rock opera'
         }
     ]
 }
