@@ -1,4 +1,4 @@
-//import { SET_YEAR } from '../constants/Page'
+import { GET_GENRES } from '../constants/Search'
 
 const initialState = {
     /**
@@ -30,6 +30,12 @@ const initialState = {
     ]
 }
 
-export default function search(state = initialState) {
-    return state;
+export default function search(state = initialState, action) {
+  switch (action.type) {
+    case GET_GENRES:
+      return { ...state, year: action.payload }
+
+    default:
+      return state;
+  }
 }
