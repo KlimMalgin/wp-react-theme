@@ -1,4 +1,8 @@
-import { GET_GENRES } from '../constants/Search'
+import { 
+//    GET_GENRES,
+    GET_GENRES_SUCCESS
+//    GET_GENRES_FAIL
+    } from '../constants/Search'
 
 const initialState = {
     /**
@@ -8,7 +12,7 @@ const initialState = {
      */
     sortType: 'alphabet', 
     alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K'],   /* Тут надо английский алфавит */
-    tags: [
+    genres: [
         {
             name: 'Rock'
         },
@@ -32,8 +36,12 @@ const initialState = {
 
 export default function search(state = initialState, action) {
   switch (action.type) {
-    case GET_GENRES:
-      return { ...state, year: action.payload }
+
+    //case GET_GENRES:
+    //case GET_GENRES_FAIL:
+
+    case GET_GENRES_SUCCESS:
+      return { ...state, genres: action.payload }
 
     default:
       return state;

@@ -3,7 +3,7 @@ import xhr from 'xhr'
 import { 
     GET_GENRES,
     GET_GENRES_SUCCESS,
-    GET_GENRES_FAIL,
+    GET_GENRES_FAIL
     } from '../constants/Search'
 
 export function getGenres () {
@@ -13,16 +13,14 @@ export function getGenres () {
         })
         
         xhr({
-            uri: 'http://beatspot.me/vapi/v1/genre'
-        }, function (err, resp, body) {
+            uri: 'https://beatspot.me/vapi/v1/genre'
+        }, function (err, response, body) {
             if (!err) {
-                debugger;
                 dispatch({
                     type: GET_GENRES_SUCCESS,
-                    payload: []
+                    payload: JSON.parse(body)
                 })
             } else {
-                debugger;
                 dispatch({
                     type: GET_GENRES_FAIL,
                     payload: []

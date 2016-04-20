@@ -11,11 +11,12 @@ import Card from '../components/Card'
 
 
 import * as pageActions from '../actions/PageActions'
+import * as searchActions from '../actions/SearchActions'
+
 
 class App extends Component {
   render() {
     const { user, search } = this.props
-    
     const cardData = {
       user: user,
       data: {
@@ -29,7 +30,7 @@ class App extends Component {
     }
 
     return <div>
-      <Header search={search}>some header</Header>
+      <Header search={search} actions={this.props.searchActions}>some header</Header>
       <Sidebar>sidebar block</Sidebar>
       <Content>
         <Card data={cardData} />
@@ -63,7 +64,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    pageActions: bindActionCreators(pageActions, dispatch)
+    pageActions: bindActionCreators(pageActions, dispatch),
+    searchActions: bindActionCreators(searchActions, dispatch)
   }
 }
 

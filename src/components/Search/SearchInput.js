@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Input } from 'react-bootstrap'
 import cs from 'classnames'
+//import { getGenres } from '../../actions/SearchActions'
+
 export default class Search extends Component {
   constructor (props) {
       super(props)
@@ -20,6 +22,7 @@ export default class Search extends Component {
   handleChange() {
     // This could also be done using ReactLink:
     // http://facebook.github.io/react/docs/two-way-binding-helpers.html
+    this.props.change()
     this.setState({
       value: this.refs.input.getValue()
     });
