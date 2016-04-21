@@ -2,7 +2,7 @@
 .search-panel {
     position: absolute;
     top: 100%;
-    left: 15px; right: 15px;
+    left: 0; right: 0;
     background-color: #fff;
     border: solid 1px #ccc;
     min-height: 330px;
