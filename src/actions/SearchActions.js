@@ -3,7 +3,8 @@ import xhr from 'xhr'
 import { 
     GET_GENRES,
     GET_GENRES_SUCCESS,
-    GET_GENRES_FAIL
+    GET_GENRES_FAIL,
+    SELECT_GENRE
     } from '../constants/Search'
 
 export function getGenres () {
@@ -27,11 +28,19 @@ export function getGenres () {
                 })
             }
         })
-        
-        
         /*return {
             type: GET_GENRES,
             payload: []
         }*/
+    }
+}
+
+export function selectGenre(tag) {
+    return function (dispatch) {
+        console.log('SearchActions.js::Tag object: ', tag)
+        dispatch({
+            type: SELECT_GENRE,
+            payload: tag
+        })
     }
 }

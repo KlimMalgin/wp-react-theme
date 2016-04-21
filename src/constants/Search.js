@@ -13,3 +13,8 @@ export const GET_GENRES_SUCCESS = 'GET_GENRES_SUCCESS'
  * При ожидании списка жанров возникла ошибка
  */
 export const GET_GENRES_FAIL = 'GET_GENRES_FAIL'
+
+/**
+ * Выбор жанра из списка
+ */
+export const SELECT_GENRE = 'SELECT_GENRE'

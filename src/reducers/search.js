@@ -13,7 +13,7 @@ const initialState = {
     sortType: 'alphabet', 
     alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K'],   /* Тут надо английский алфавит */
     genres: [
-        {
+        /*{
             name: 'Rock'
         },
         {
@@ -30,7 +30,7 @@ const initialState = {
         },
         {
             name: 'Rock opera'
-        }
+        }*/
     ]
 }
 

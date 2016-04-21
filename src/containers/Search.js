@@ -8,7 +8,7 @@ export default class Search extends Component {
     render () {
         return <div className='search'>
             <SearchInput onChange={this.props.actions.getGenres} />
-            <SearchPanel search={this.props.search} />
+            <SearchPanel search={this.props.search} actions={this.props.actions} />
         </div>
     }
 }
