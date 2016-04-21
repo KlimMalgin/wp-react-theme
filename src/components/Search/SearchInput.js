@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Input } from 'react-bootstrap'
 import cs from 'classnames'
+import Tag from './Tag'
 //import { getGenres } from '../../actions/SearchActions'
 
 export default class Search extends Component {
@@ -32,6 +33,10 @@ export default class Search extends Component {
       active: false
     });
   }
+  
+  tag (tag) {
+    return <Tag text={tag.name} />
+  }
 
   render() {
     const rootCls = cs({
@@ -50,7 +55,11 @@ export default class Search extends Component {
     return (
       <div className={rootCls}>
         <div className={bgCls}></div>
-        <div className='__tags'></div>
+        <div className='__tags'>
+          {this.props.search.genres
+              .filter((item) => item.selected == true)
+              .map((item) => this.tag(item) )}
+        </div>
         <Input
           type='text'
           groupClassName={groupCls}

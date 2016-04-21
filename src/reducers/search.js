@@ -1,6 +1,7 @@
 import { 
 //    GET_GENRES,
-    GET_GENRES_SUCCESS
+    GET_GENRES_SUCCESS,
+    SELECT_GENRE
 //    GET_GENRES_FAIL
     } from '../constants/Search'
 
@@ -39,11 +40,14 @@ export default function search(state = initialState, action) {
 
     //case GET_GENRES:
     //case GET_GENRES_FAIL:
-
+ 
     case GET_GENRES_SUCCESS:
-      return { ...state, genres: action.payload }
+        return { ...state, genres: action.payload }
 
+    case SELECT_GENRE:
+        return { ...state, genres: state.genres.map((genre) => genre === action.payload ? { ...action.payload, selected: true } : genre ) }
+    
     default:
-      return state;
+        return state;
   }
 }
