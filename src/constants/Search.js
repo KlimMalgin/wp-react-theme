@@ -18,3 +18,8 @@ export const GET_GENRES_FAIL = 'GET_GENRES_FAIL'
  * Выбор жанра из списка
  */
 export const SELECT_GENRE = 'SELECT_GENRE'
+
+/**
+ * Удаление жанра из выбранных
+ */
+export const UNSELECT_GENRE = 'UNSELECT_GENRE'

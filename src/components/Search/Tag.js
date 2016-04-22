@@ -5,11 +5,9 @@ import FontAwesome from 'react-fontawesome'
 export default class Tag extends Component {
     
     renderCloseBtn () {
-        return this.props.close 
-                    ? <Button>
-                        <FontAwesome className='tag__icon fa-fw' name='close' />
-                    </Button> 
-                    : null
+        return this.props.close ? <Button onClick={this.props.onCloseClick}>
+            <FontAwesome className='tag__icon fa-fw' name='close' />
+        </Button> : null
     }
     
     render () {

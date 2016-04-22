@@ -16,7 +16,7 @@ export default class Search extends Component {
   handleChange() {
     // This could also be done using ReactLink:
     // http://facebook.github.io/react/docs/two-way-binding-helpers.html
-    this.props.onChange()
+    this.props.actions.getGenres()
     this.setState({
       value: this.refs.input.getValue()
     });
@@ -39,7 +39,7 @@ export default class Search extends Component {
   }
   
   renderTag (tag) {
-    return <Tag close text={tag.name} />
+    return <Tag close onCloseClick={() => this.props.actions.unSelectGenre(tag)} text={tag.name} />
   }
 
   render() {
@@ -61,7 +61,7 @@ export default class Search extends Component {
       <div className={rootCls}>
         <div className={bgCls}></div>
         <div className='__tags'>
-          {this.props.search.genres.filter(isSelected).map(renderTag)}
+          {this.props.search.genres.filter(isSelected).map(renderTag.bind(this))}
         </div>
         <Input
           type='text'

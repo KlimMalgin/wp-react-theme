@@ -4,6 +4,7 @@ import {
     GET_GENRES,
     GET_GENRES_SUCCESS,
     GET_GENRES_FAIL,
+    UNSELECT_GENRE,
     SELECT_GENRE
     } from '../constants/Search'
 
@@ -37,9 +38,19 @@ export function getGenres () {
 
 export function selectGenre(tag) {
     return function (dispatch) {
-        console.log('SearchActions.js::Tag object: ', tag)
+        //console.log('SearchActions.js::Tag object: ', tag)
         dispatch({
             type: SELECT_GENRE,
+            payload: tag
+        })
+    }
+}
+
+export function unSelectGenre(tag) {
+    return function (dispatch) {
+        console.log('SearchActions.js::Tag object: ', tag)
+        dispatch({
+            type: UNSELECT_GENRE,
             payload: tag
         })
     }

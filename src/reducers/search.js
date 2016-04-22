@@ -1,6 +1,7 @@
 import { 
 //    GET_GENRES,
     GET_GENRES_SUCCESS,
+    UNSELECT_GENRE,
     SELECT_GENRE
 //    GET_GENRES_FAIL
     } from '../constants/Search'
@@ -45,9 +46,27 @@ export default function search(state = initialState, action) {
         return { ...state, genres: action.payload }
 
     case SELECT_GENRE:
-        return { ...state, genres: state.genres.map((genre) => genre === action.payload ? { ...action.payload, selected: true } : genre ) }
+        return setSelected(state, action, true)
+    
+    case UNSELECT_GENRE:
+        return setSelected(state, action, false)
     
     default:
         return state;
   }
+}
+
+/**
+ * Установить свойство selected для жанра в action.payload
+ * @param {Object} state Состояние для search
+ * @param {Object} action Объект текущего действия
+ * @param {Boolean} value Новое значение для жанра
+ */
+function setSelected (state, action, value) {
+    return { ...state, 
+            genres: state.genres.map(
+                (genre) => genre === action.payload 
+                            ? { ...action.payload, selected: value } 
+                            : genre ) 
+    }
 }
