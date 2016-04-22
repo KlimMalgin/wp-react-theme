@@ -13,27 +13,8 @@ const initialState = {
      * alphabet - по алфавиту (Буквы алфавита как заголовки разделов с тегами)
      */
     sortType: 'alphabet', 
-    alphabet: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G', 'K'],   /* Тут надо английский алфавит */
-    genres: [
-        /*{
-            name: 'Rock'
-        },
-        {
-            name: 'Drum\'n\'Base'
-        },
-        {
-            name: 'Relax'
-        },
-        {
-            name: 'Classic'
-        },
-        {
-            name: 'Electronic'
-        },
-        {
-            name: 'Rock opera'
-        }*/
-    ]
+    alphabet: {},
+    genres: []
 }
 
 export default function search(state = initialState, action) {
@@ -43,7 +24,8 @@ export default function search(state = initialState, action) {
     //case GET_GENRES_FAIL:
  
     case GET_GENRES_SUCCESS:
-        return { ...state, genres: action.payload }
+        return createStateAndSortByAlphabet(state, action, alphabetAsObject())
+        //return { ...state, genres: action.payload }
 
     case SELECT_GENRE:
         return setSelected(state, action, true)
@@ -69,4 +51,48 @@ function setSelected (state, action, value) {
                             ? { ...action.payload, selected: value } 
                             : genre ) 
     }
+}
+
+/**
+ * Добавляем в стейт жанры и сортируем их по алфавиту. Ожидаем, что в action.payload - массив жанров
+ */
+function createStateAndSortByAlphabet (state, action, alphabet) {
+    action.payload.map((item) => alphabet[item.name[0].toUpperCase()].push(item))
+    return { ...state, genres: action.payload, alphabet: alphabet }
+}
+
+
+/*function alphabetAsArray () {
+    return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+}*/
+
+function alphabetAsObject () {
+    return {
+        'A': [], 
+        'B': [], 
+        'C': [], 
+        'D': [], 
+        'E': [], 
+        'F': [], 
+        'G': [], 
+        'H': [], 
+        'I': [], 
+        'J': [], 
+        'K': [], 
+        'L': [], 
+        'M': [], 
+        'N': [], 
+        'O': [], 
+        'P': [], 
+        'Q': [], 
+        'R': [], 
+        'S': [], 
+        'T': [], 
+        'U': [], 
+        'V': [], 
+        'W': [], 
+        'X': [], 
+        'Y': [], 
+        'Z': []
+    };
 }

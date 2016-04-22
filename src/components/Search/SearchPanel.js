@@ -8,6 +8,11 @@ export default class SearchPanel extends Component {
         const { selectGenre, unSelectGenre } = this.props.actions 
         return <Tag onClick={() => (tag.selected ? unSelectGenre : selectGenre)(tag)} data={tag} />
     }
+    
+    renderTagByAlphabet () {
+        
+    }
+    
     /*category (category) {
         return <Title name={category} />
     }*/
@@ -15,6 +20,7 @@ export default class SearchPanel extends Component {
     render () {
         const { renderTag } = this
         const { genres } = this.props.search
+        console.log('searchState: %o', this.props.search)
         return <div className='search-panel'>
             {genres.map(renderTag.bind(this))}
         </div>

@@ -38,7 +38,6 @@ export function getGenres () {
 
 export function selectGenre(tag) {
     return function (dispatch) {
-        //console.log('SearchActions.js::Tag object: ', tag)
         dispatch({
             type: SELECT_GENRE,
             payload: tag
@@ -48,7 +47,6 @@ export function selectGenre(tag) {
 
 export function unSelectGenre(tag) {
     return function (dispatch) {
-        console.log('SearchActions.js::Tag object: ', tag)
         dispatch({
             type: UNSELECT_GENRE,
             payload: tag
