@@ -34,11 +34,16 @@ export default class Search extends Component {
     });
   }
   
-  tag (tag) {
-    return <Tag text={tag.name} />
+  isSelected (item) {
+    return item.selected == true
+  }
+  
+  renderTag (tag) {
+    return <Tag close text={tag.name} />
   }
 
   render() {
+    const { isSelected, renderTag } = this
     const rootCls = cs({
         'search-input': true,
         active: this.state.active
@@ -56,9 +61,7 @@ export default class Search extends Component {
       <div className={rootCls}>
         <div className={bgCls}></div>
         <div className='__tags'>
-          {this.props.search.genres
-              .filter((item) => item.selected == true)
-              .map((item) => this.tag(item) )}
+          {this.props.search.genres.filter(isSelected).map(renderTag)}
         </div>
         <Input
           type='text'
