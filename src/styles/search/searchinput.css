@@ -36,8 +36,8 @@
     right: 0;
     margin: 0;
     width: 150px;
-    transition: right 0.8s ease-out 0s;
-    transition: width 0.2s ease-out 0s;
+    transition: right 0.2s ease-out 0s, 
+                width 0.2s ease-out 0s;
 }
 
 .search-input .__input.active {

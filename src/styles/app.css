@@ -68,12 +68,14 @@ body {
 }
 
 
+@import url('./bootstrap/override.css');
 @import url('./sidebar.css');
 @import url('./content.css');
 @import url('./header.css');
 @import url('./card.css');
 @import url('./avatar.css');
 @import url('./userhead.css');
+@import url('./search/tag.css');
 @import url('./search/search.css');
 @import url('./search/searchinput.css');
 @import url('./search/searchpanel.css');
