@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { ButtonGroup, Button } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
+import cs from 'classnames'
 
 export default class Tag extends Component {
     
@@ -11,9 +12,13 @@ export default class Tag extends Component {
     }
     
     render () {
-        const { text } = this.props;
-        return <ButtonGroup onClick={this.props.onClick} className='tag'>
-            <Button className='tag__text'>{text}</Button>
+        const { name, selected } = this.props.data;
+        const tagCls = cs({
+            tag: true,
+            _selected: !!selected
+        })
+        return <ButtonGroup onClick={this.props.onClick} className={tagCls}>
+            <Button className='tag__text'>{name}</Button>
             {this.renderCloseBtn()}
         </ButtonGroup>
     }

@@ -39,7 +39,7 @@ export default class Search extends Component {
   }
   
   renderTag (tag) {
-    return <Tag close onCloseClick={() => this.props.actions.unSelectGenre(tag)} text={tag.name} />
+    return <Tag close onCloseClick={() => this.props.actions.unSelectGenre(tag)} data={tag} />
   }
 
   render() {

@@ -20,3 +20,8 @@
     color: #7c7f82;
     font-weight: 600;
 }
+
+.search-panel .tag._selected .btn {
+    background-color: #4B75A5;
+    color: #D8E1EA;
+}
