@@ -5,15 +5,12 @@ import Tag from './Tag'
 export default class SearchPanel extends Component {
     
     renderTag (tag) {
-        return <Tag onClick={() => this.props.actions.selectGenre(tag)} data={tag} />
+        const { selectGenre, unSelectGenre } = this.props.actions 
+        return <Tag onClick={() => (tag.selected ? unSelectGenre : selectGenre)(tag)} data={tag} />
     }
     /*category (category) {
         return <Title name={category} />
     }*/
-    
-    isNotSelected (tag) {
-        return !tag.selected
-    }
     
     render () {
         const { renderTag } = this
