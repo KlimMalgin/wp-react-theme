@@ -10,6 +10,7 @@
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
     text-align: left;
+    padding: 7px 5px;
 }
 
 .search-panel h3 {

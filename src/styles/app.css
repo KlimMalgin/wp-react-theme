@@ -76,6 +76,7 @@ body {
 @import url('./avatar.css');
 @import url('./userhead.css');
 @import url('./search/tag.css');
+@import url('./search/title.css');
 @import url('./search/search.css');
 @import url('./search/searchinput.css');
 @import url('./search/searchpanel.css');

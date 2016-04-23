@@ -7,7 +7,9 @@ export default class Title extends Component {
     return <div className='title'>
       <h3>{name}</h3>
       <Separator />
-      {this.props.children}
+      <div className='title__body'>
+        {this.props.children}
+      </div>
     </div>
   }
 }
