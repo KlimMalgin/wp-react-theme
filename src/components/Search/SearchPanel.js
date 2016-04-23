@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Tag from './Tag'
-//import Title from './Title'
+import Title from './Title'
 
 export default class SearchPanel extends Component {
     
@@ -10,19 +10,21 @@ export default class SearchPanel extends Component {
     }
     
     renderTagByAlphabet () {
-        
+        const { alphabet } = this.props.search;
+        const result = [];
+        // TODO: Переписать на for...of ?
+        for (const key in alphabet) {
+            if (!alphabet.hasOwnProperty(key)) continue;
+            if (alphabet[key].length) {
+                result.push(<Title name={key}>{alphabet[key].map(::this.renderTag)}</Title>);
+            }
+        }
+        return result;
     }
     
-    /*category (category) {
-        return <Title name={category} />
-    }*/
-    
     render () {
-        const { renderTag } = this
-        const { genres } = this.props.search
-        console.log('searchState: %o', this.props.search)
         return <div className='search-panel'>
-            {genres.map(renderTag.bind(this))}
+            {this.renderTagByAlphabet()}
         </div>
     }
 }

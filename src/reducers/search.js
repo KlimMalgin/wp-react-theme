@@ -42,23 +42,29 @@ export default function search(state = initialState, action) {
  * Установить свойство selected для жанра в action.payload
  * @param {Object} state Состояние для search
  * @param {Object} action Объект текущего действия
- * @param {Boolean} value Новое значение для жанра
+ * @param {Boolean} value Новое состояние жанра
  */
 function setSelected (state, action, value) {
-    return { ...state, 
-            genres: state.genres.map(
-                (genre) => genre === action.payload 
+    let genreChanger = (genre) => genre.id == action.payload.id 
                             ? { ...action.payload, selected: value } 
-                            : genre ) 
-    }
+                            : genre;
+    let symbol = action.payload.name[0].toUpperCase(),
+        genresByKey = state.alphabet[symbol].map(genreChanger),
+        alphabet = { ...state.alphabet };
+    alphabet[symbol] = genresByKey;
+    
+    return { ...state, 
+            genres: state.genres.map(genreChanger),
+            alphabet: alphabet
+    };
 }
 
 /**
  * Добавляем в стейт жанры и сортируем их по алфавиту. Ожидаем, что в action.payload - массив жанров
  */
 function createStateAndSortByAlphabet (state, action, alphabet) {
-    action.payload.map((item) => alphabet[item.name[0].toUpperCase()].push(item))
-    return { ...state, genres: action.payload, alphabet: alphabet }
+    action.payload.map((item) => alphabet[item.name[0].toUpperCase()].push(item));
+    return { ...state, genres: action.payload, alphabet: alphabet };
 }
 
 
