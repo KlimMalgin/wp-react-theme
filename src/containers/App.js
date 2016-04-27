@@ -4,14 +4,18 @@ import { connect } from 'react-redux'
 /*import User from '../components/User'
 import Page from '../components/Page'*/
 
+import merge from 'merge'
+
 import Sidebar from './Sidebar'
 import Content from './Content'
 import Header from './Header'
 import Card from '../components/Card'
+import Shadow from '../components/Shadow'
 
 
 import * as pageActions from '../actions/PageActions'
 import * as searchActions from '../actions/SearchActions'
+import * as shadowActions from '../actions/ShadowActions'
 
 
 class App extends Component {
@@ -28,9 +32,11 @@ class App extends Component {
         likes: 128
       }
     }
+    const headerActions = merge(this.props.searchActions, this.props.shadowActions)
 
     return <div>
-      <Header search={search} actions={this.props.searchActions}>some header</Header>
+      <Shadow />
+      <Header search={search} actions={headerActions}>some header</Header>
       <Sidebar>sidebar block</Sidebar>
       <Content>
         <Card data={cardData} />
@@ -58,14 +64,16 @@ function mapStateToProps(state) {
   return {
     user: state.user,
     page: state.page,
-    search: state.search
+    search: state.search,
+    shadow: state.shadow
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     pageActions: bindActionCreators(pageActions, dispatch),
-    searchActions: bindActionCreators(searchActions, dispatch)
+    searchActions: bindActionCreators(searchActions, dispatch),
+    shadowActions: bindActionCreators(shadowActions, dispatch)
   }
 }
 
