@@ -4,8 +4,7 @@
     top: 100%;
     left: 0; right: 0;
     background-color: #fff;
-    border: solid 1px #ccc;
-    min-height: 330px;
+    
     border: 1px solid #ccc;
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0,0,0,.1);
@@ -25,4 +24,9 @@
 .search-panel .tag._selected .btn {
     background-color: #4B75A5;
     color: #D8E1EA;
+}
+
+.search-panel .progress {
+    width: 60%;
+    margin: 5px auto;
 }
