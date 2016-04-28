@@ -20,7 +20,7 @@ import * as shadowActions from '../actions/ShadowActions'
 
 class App extends Component {
   render() {
-    const { user, search } = this.props
+    const { user, search, shadow } = this.props
     const cardData = {
       user: user,
       data: {
@@ -35,7 +35,7 @@ class App extends Component {
     const headerActions = merge(this.props.searchActions, this.props.shadowActions)
 
     return <div>
-      <Shadow />
+      <Shadow shadow={shadow} actions={this.props.shadowActions} />
       <Header search={search} actions={headerActions}>some header</Header>
       <Sidebar>sidebar block</Sidebar>
       <Content>

@@ -23,6 +23,7 @@ export default class Search extends Component {
   }
 
   handleFocus() {
+    this.props.actions.enableShadow()
     this.setState({
       active: true
     });

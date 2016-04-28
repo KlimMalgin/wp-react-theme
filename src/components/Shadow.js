@@ -3,10 +3,11 @@ import cs from 'classnames'
 
 export default class Shadow extends Component {
     render () {
+        const { shadow, actions } = this.props
         const shadowCls = cs({
             shadow: true,
-            active: this.props.active
+            active: shadow.active
         })
-        return <div className={shadowCls}></div>
+        return <div className={shadowCls} onClick={actions.disableShadow}></div>
     }
 }
