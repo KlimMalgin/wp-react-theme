@@ -6,15 +6,34 @@ import {
 //    GET_GENRES_FAIL
     } from '../constants/Search'
 
+import { 
+    ENABLE_SHADOW,
+    DISABLE_SHADOW
+} from '../constants/Shadow'
+
 const initialState = {
     /**
+     * @depricated Не используется
      * Как сортировать теги при выводе:
      * all - все подряд (но в алфавитном порядке)
      * alphabet - по алфавиту (Буквы алфавита как заголовки разделов с тегами)
      */
     sortType: 'alphabet', 
+    
+    /**
+     * Жанры отсортированные по алфавиту
+     */
     alphabet: {},
-    genres: []
+    
+    /**
+     * Полный список загруженных жанров
+     */
+    genres: [],
+    
+    /**
+     * Активна строка поиска и searchPanel или нет
+     */
+    active: false
 }
 
 export default function search(state = initialState, action) {
@@ -32,6 +51,10 @@ export default function search(state = initialState, action) {
     
     case UNSELECT_GENRE:
         return setSelected(state, action, false)
+    
+    case ENABLE_SHADOW:
+    case DISABLE_SHADOW:
+        return { ...state, active: action.payload }
     
     default:
         return state;

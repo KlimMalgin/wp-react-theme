@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { ProgressBar } from 'react-bootstrap'
+import cs from 'classnames'
 import Tag from './Tag'
 import Title from './Title'
 
@@ -28,8 +29,12 @@ export default class SearchPanel extends Component {
     }
     
     render () {
-        const { genres } = this.props.search
-        return <div className='search-panel'>
+        const { genres, active } = this.props.search
+        const panelCls = cs({
+            'search-panel': true,
+            active: active
+        })
+        return <div className={panelCls}>
             {genres && genres.length ? this.renderTagByAlphabet() : this.renderProgressBag()}
         </div>
     }
