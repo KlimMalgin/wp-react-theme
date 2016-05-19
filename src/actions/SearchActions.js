@@ -5,7 +5,9 @@ import {
     GET_GENRES_SUCCESS,
     GET_GENRES_FAIL,
     UNSELECT_GENRE,
-    SELECT_GENRE
+    SELECT_GENRE,
+    ENABLE_PANEL,
+    DISABLE_PANEL
     } from '../constants/Search'
 
 export function getGenres () {
@@ -52,4 +54,18 @@ export function unSelectGenre(tag) {
             payload: tag
         })
     }
+}
+
+export function enablePanel() {
+  return {
+    type: ENABLE_PANEL,
+    payload: true
+  }
+}
+
+export function disablePanel() {
+  return {
+    type: DISABLE_PANEL,
+    payload: false
+  }
 }

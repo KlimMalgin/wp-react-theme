@@ -23,3 +23,13 @@ export const SELECT_GENRE = 'SELECT_GENRE'
  * Удаление жанра из выбранных
  */
 export const UNSELECT_GENRE = 'UNSELECT_GENRE'
+
+/**
+ * Показать панель поиска
+ */
+export const ENABLE_PANEL = 'ENABLE_PANEL'
+
+/**
+ * Скрыть панель поиска
+ */
+export const DISABLE_PANEL = 'DISABLE_PANEL'

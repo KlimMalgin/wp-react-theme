@@ -2,7 +2,9 @@ import {
 //    GET_GENRES,
     GET_GENRES_SUCCESS,
     UNSELECT_GENRE,
-    SELECT_GENRE
+    SELECT_GENRE/*,
+    ENABLE_PANEL,
+    DISABLE_PANEL*/
 //    GET_GENRES_FAIL
     } from '../constants/Search'
 
@@ -10,6 +12,8 @@ import {
     ENABLE_SHADOW,
     DISABLE_SHADOW
 } from '../constants/Shadow'
+
+import compose from 'compose-function'
 
 const initialState = {
     /**
@@ -31,9 +35,19 @@ const initialState = {
     genres: [],
     
     /**
-     * Активна строка поиска и searchPanel или нет
+     * Количество выбранных тегов
+     */
+    selectedCount: 0,
+    
+    /**
+     * Активна строка поиска или нет
      */
     active: false
+    
+    /**
+     * Активна searchPanel или нет
+     */
+    //activePanel: false
 }
 
 export default function search(state = initialState, action) {
@@ -56,28 +70,41 @@ export default function search(state = initialState, action) {
     case DISABLE_SHADOW:
         return { ...state, active: action.payload }
     
+    /*case ENABLE_PANEL:
+    case DISABLE_PANEL:
+        return { ...state, activePanel: action.payload }*/
+    
     default:
         return state;
   }
 }
 
 /**
- * Установить свойство selected для жанра в action.payload
+ * Установить свойство selected для жанра из action.payload
  * @param {Object} state Состояние для search
  * @param {Object} action Объект текущего действия
  * @param {Boolean} value Новое состояние жанра
  */
 function setSelected (state, action, value) {
+    let selectedCounter = state.selectedCount;
     let genreChanger = (genre) => genre.id == action.payload.id 
                             ? { ...action.payload, selected: value } 
                             : genre;
+    let selectedIterator = (genre) => {
+                                if (genre.id == action.payload.id) {
+                                    genre.selected ? selectedCounter++ : selectedCounter--;     
+                                }
+                                return genre;
+                            };
+    let composeChanger = compose(selectedIterator, genreChanger);
     let symbol = action.payload.name[0].toUpperCase(),
-        genresByKey = state.alphabet[symbol].map(genreChanger),
+        genresByKey = state.alphabet[symbol].map(composeChanger),
         alphabet = { ...state.alphabet };
     alphabet[symbol] = genresByKey;
     
     return { ...state, 
             genres: state.genres.map(genreChanger),
+            selectedCount: selectedCounter,
             alphabet: alphabet
     };
 }

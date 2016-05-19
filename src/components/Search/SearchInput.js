@@ -7,6 +7,7 @@ import Tag from './Tag'
 export default class Search extends Component {
   constructor (props) {
       super(props)
+      debugger;
       this.state = {
           value: '',
           active: false
@@ -14,11 +15,17 @@ export default class Search extends Component {
   }
 
   handleChange() {
+    let value = this.refs.input.getValue()
     // This could also be done using ReactLink:
     // http://facebook.github.io/react/docs/two-way-binding-helpers.html
     this.props.actions.getGenres()
+/*    if (value && value.length) {
+      this.props.actions.enablePanel()
+    } else {
+      this.props.actions.disablePanel()
+    }*/
     this.setState({
-      value: this.refs.input.getValue()
+      value: value
     });
   }
 
@@ -44,18 +51,19 @@ export default class Search extends Component {
   }
 
   render() {
-    const { isSelected, renderTag } = this
+    const { isSelected, renderTag } = this;
+    const tagSelected = this.props.search.selectedCount > 0;
     const rootCls = cs({
         'search-input': true,
-        active: this.state.active
+        active: this.state.active || tagSelected
       }),
       groupCls = cs({
         __input: true,
-        active: this.state.active
+        active: this.state.active || tagSelected
       }),
       bgCls = cs({
         __bg: true,
-        active: this.state.active
+        active: this.state.active || tagSelected
       })
     
     return (
