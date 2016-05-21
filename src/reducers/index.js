@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
 import page from './page'
 import user from './user'
 import search from './search'
@@ -8,5 +9,6 @@ export default combineReducers({
   page,
   user,
   search,
-  shadow
+  shadow,
+  routing: routerReducer
 })
