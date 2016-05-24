@@ -7,7 +7,6 @@ import Tag from './Tag'
 export default class Search extends Component {
   constructor (props) {
       super(props)
-      debugger;
       this.state = {
           value: '',
           active: false
