@@ -27,7 +27,7 @@ module.exports = {
         test: /\.js$/,
         loaders: ['eslint'],
         include: [
-          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, 'src'),
         ],
       }
     ],
@@ -35,14 +35,18 @@ module.exports = {
       {
         loaders: ['react-hot', 'babel-loader'],
         include: [
-          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, 'src'),
         ],
         test: /\.js$/,
         plugins: ['transform-runtime'],
       },
       {
         test:   /\.css$/,
-        loader: "style-loader!css-loader!postcss-loader"
+        loader: 'style-loader!css-loader!postcss-loader'
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!postcss-loader!less-loader'
       }
     ]
   },
