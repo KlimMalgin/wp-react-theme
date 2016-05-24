@@ -44,6 +44,8 @@
     "react-dom": "^0.14.6",
     "react-fontawesome": "^0.3.3",
     "react-redux": "^4.0.6",
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.4",
     "redux": "^3.1.0",
     "redux-thunk": "^2.0.1",
     "xhr": "^2.2.0"
