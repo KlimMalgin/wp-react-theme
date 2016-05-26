@@ -17,10 +17,10 @@ export function getGenres () {
             type: GET_GENRES
         })
         
-        genres().then(function (response, body) {
+        genres().then(function (response) {
             dispatch({
-                type: GET_GENRES_SUCCESS,
-                payload: JSON.parse(body)
+                type: GET_GENRES_SUCCESS, 
+                payload: JSON.parse(response.body)
             })
         }).catch(function (/*err*/) {
             dispatch({

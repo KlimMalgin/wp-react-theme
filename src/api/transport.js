@@ -10,9 +10,9 @@ export default function transport (endpoint, params) {
     let defer = new Promise(function (resolve, reject) {
         xhr({
             uri: cfg.server + cfg.api.url + endpoint + getParams(params || {})
-        }, function (err, response, body) {
+        }, function (err, response) {
             if (!err) {
-                resolve(response, body);
+                resolve(response);
             } else {
                 reject(err);
             }
