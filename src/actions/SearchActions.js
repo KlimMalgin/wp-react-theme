@@ -1,4 +1,5 @@
-import xhr from 'xhr'
+//import xhr from 'xhr'
+import { genres } from '../api/api'
 
 import { 
     GET_GENRES,
@@ -16,7 +17,19 @@ export function getGenres () {
             type: GET_GENRES
         })
         
-        xhr({
+        genres().then(function (response, body) {
+            dispatch({
+                type: GET_GENRES_SUCCESS,
+                payload: JSON.parse(body)
+            })
+        }).catch(function (/*err*/) {
+            dispatch({
+                type: GET_GENRES_FAIL,
+                payload: []
+            })
+        });
+            
+        /*xhr({
             uri: 'https://beatspot.me/vapi/v1/genre'
         }, function (err, response, body) {
             if (!err) {
@@ -30,7 +43,7 @@ export function getGenres () {
                     payload: []
                 })
             }
-        })
+        })*/
         /*return {
             type: GET_GENRES,
             payload: []
