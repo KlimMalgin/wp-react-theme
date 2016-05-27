@@ -28,26 +28,6 @@ export function getGenres () {
                 payload: []
             })
         });
-            
-        /*xhr({
-            uri: 'https://beatspot.me/vapi/v1/genre'
-        }, function (err, response, body) {
-            if (!err) {
-                dispatch({
-                    type: GET_GENRES_SUCCESS,
-                    payload: JSON.parse(body)
-                })
-            } else {
-                dispatch({
-                    type: GET_GENRES_FAIL,
-                    payload: []
-                })
-            }
-        })*/
-        /*return {
-            type: GET_GENRES,
-            payload: []
-        }*/
     }
 }
 
