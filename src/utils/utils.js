@@ -6,4 +6,3 @@ export function px(value) {
 export function pc(value) {
     return value + '%';
 }
-

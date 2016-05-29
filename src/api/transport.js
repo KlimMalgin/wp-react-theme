@@ -25,7 +25,7 @@ export default function transport (endpoint, params) {
  * Преобразует json-объект в строку get-параметров
  */
 function getParams(params) {
-    let result = ``;
+    let result = '';
     Object.keys(params).forEach(function (key, index) {
         result += `${index > 0 ? '&' : ''}args[${index}]=${params[key]}`;
     });
