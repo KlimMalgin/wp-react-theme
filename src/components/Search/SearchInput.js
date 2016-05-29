@@ -17,6 +17,7 @@ export default class Search extends Component {
     let value = this.refs.input.getValue()
     // This could also be done using ReactLink:
     // http://facebook.github.io/react/docs/two-way-binding-helpers.html
+    debugger
     this.props.actions.getGenres()
 /*    if (value && value.length) {
       this.props.actions.enablePanel()

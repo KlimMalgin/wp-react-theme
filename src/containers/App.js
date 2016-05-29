@@ -28,7 +28,7 @@ class App extends Component {
   
   render() {
     const { /*user,*/ search, shadow } = this.props
-    debugger
+    
     const headerActions = merge(this.props.actions.search, this.props.actions.shadow)
     return <div>
       <Shadow shadow={shadow} actions={this.props.actions.shadow} />

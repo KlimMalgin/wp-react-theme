@@ -5,7 +5,7 @@
 import React, { PropTypes, Component } from 'react'
 import UserHead from '../components/UserHead'
 import Feed from '../containers/Feed'
-//import { getUserData } from '../actions/UserActions'
+import { getUserData } from '../actions/UserActions'
 
 export default class UserPage extends Component {
     static propTypes = {
@@ -14,7 +14,8 @@ export default class UserPage extends Component {
     
     constructor (props) {
         super(props)
-        //getUserData(this.props.params.userId)
+        debugger;
+        getUserData(this.props.params.userId)
         console.log('URL::PARAMS::USERID::%o', this.props.params.userId)
     }
     
