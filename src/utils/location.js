@@ -7,5 +7,5 @@
  * @return {String} Наименование параметра из url
  */
 export function currentRoute (urlParamIndex = 1) {
-    return this.props.location.pathname.split('/')[urlParamIndex];
+    return this.props.location.pathname.split('/')[urlParamIndex] || '';
 }

@@ -10,7 +10,6 @@ import Header from './Header'
 import Shadow from '../components/Shadow'
 
 import * as actions from '../actions'
-
 import { location } from '../utils'
 
 class App extends Component {
@@ -24,7 +23,7 @@ class App extends Component {
   }
   
   render() {
-    const { /*user,*/ search, shadow } = this.props
+    const { search, shadow } = this.props
     
     const headerActions = merge(this.props.actions.search, this.props.actions.shadow)
     return <div>
