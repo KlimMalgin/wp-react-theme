@@ -20,25 +20,10 @@ render(
         <IndexRoute component={FeedPage} />
         <Route path='/feed' component={FeedPage} />
         <Route path='/user/:userId' component={UserPage} />
+        <Route path='/user/:userId/content/:contentId' component={UserPage} /> { /* :contentId это id материала или 'new' */ }
         <Route path='*' component={NotFoundPage} />
       </Route>
     </Router>
   </Provider>,
   document.getElementById('app')
 )
-
-
-/*
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={App}>
-        <Route path="foo" component={Foo}/>
-        <Route path="bar" component={Bar}/>
-      </Route>
-    </Router>
-  </Provider>,
-  document.getElementById('mount')
-)
-
-*/

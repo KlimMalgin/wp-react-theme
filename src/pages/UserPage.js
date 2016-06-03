@@ -5,7 +5,6 @@
 import React, { PropTypes, Component } from 'react'
 import UserHead from '../components/UserHead'
 import Feed from '../containers/Feed'
-//import { getUserData } from '../actions/UserActions'
 
 export default class UserPage extends Component {
     static propTypes = {
@@ -19,18 +18,7 @@ export default class UserPage extends Component {
     }
     
     render() {
-        /*const data = {
-            user: {
-                avatar: {
-                  urls: {
-                    min: 'http://placehold.it/32x32',
-                    medium: 'http://placehold.it/96x96'
-                  }
-                },
-                name: 'User Name'
-            }
-        }*/
-        //debugger
+        debugger;
         return <div className='userpage'>
             <UserHead user={this.props.data} />
             <Feed />

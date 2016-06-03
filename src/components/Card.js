@@ -6,8 +6,7 @@ import FontAwesome from 'react-fontawesome'
 
 export default class Card extends Component {
   render() {
-    const { user, data, info } = this.props.data
-    debugger;
+    const { user, data, info } = this.props.data;
     return <div className='card'>
         <div className='card__body'>
             <div className='card__info'>

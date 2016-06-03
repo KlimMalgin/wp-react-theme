@@ -1,10 +1,7 @@
+/**
+ * Контейнер-обертка для рабочей области сайта
+ */
 import React, { Component } from 'react'
-//import { bindActionCreators } from 'redux'
-//import { connect } from 'react-redux'
-
-//import { Navbar } from 'react-bootstrap';
-
-//import UserHead from '../components/UserHead'
 
 export default class Content extends Component {
     render () {
