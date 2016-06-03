@@ -2,6 +2,7 @@
 let config = {
     server: 'https://beatspot.me/',
     files: {
+        default: 'sites/default/files/',
         img: {
             thumbnail: 'sites/default/files/styles/thumbnail/public/',
             medium: 'sites/default/files/styles/medium/public/',
@@ -20,4 +21,4 @@ let config = {
 const endpoints = config.api.endpoints;
 
 export default config;
-export { endpoints };
+export { config, endpoints };

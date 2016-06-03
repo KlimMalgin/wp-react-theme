@@ -22,7 +22,7 @@ class App extends Component {
     return this.props.actions[this.currentRoute()] || {};
   }
   
-  childrenState () {
+  childrenData () {
     return this.props[this.currentRoute()] || {};
   }
   
@@ -35,7 +35,7 @@ class App extends Component {
       <Header search={search} actions={headerActions}>some header</Header>
       <Sidebar>sidebar block</Sidebar>
       <Content>
-        {React.cloneElement(this.props.children, { actions: this.childrenActions(), state: this.childrenState() })}
+        {React.cloneElement(this.props.children, { actions: this.childrenActions(), data: this.childrenData() })}
       </Content>
     </div>
   }

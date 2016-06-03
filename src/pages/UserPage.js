@@ -5,7 +5,7 @@
 import React, { PropTypes, Component } from 'react'
 import UserHead from '../components/UserHead'
 import Feed from '../containers/Feed'
-import { getUserData } from '../actions/UserActions'
+//import { getUserData } from '../actions/UserActions'
 
 export default class UserPage extends Component {
     static propTypes = {
@@ -14,13 +14,12 @@ export default class UserPage extends Component {
     
     constructor (props) {
         super(props)
-        debugger;
-        getUserData(this.props.params.userId)
+        this.props.actions.getUserData(this.props.params.userId);
         console.log('URL::PARAMS::USERID::%o', this.props.params.userId)
     }
     
     render() {
-        const data = {
+        /*const data = {
             user: {
                 avatar: {
                   urls: {
@@ -30,10 +29,10 @@ export default class UserPage extends Component {
                 },
                 name: 'User Name'
             }
-        }
-        
+        }*/
+        //debugger
         return <div className='userpage'>
-            <UserHead data={data} />
+            <UserHead user={this.props.data} />
             <Feed />
         </div>
     }

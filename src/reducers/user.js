@@ -8,14 +8,18 @@ import {
 
 const initialState = {
   avatar: {
+    filename: 'http://placehold.it/96x96',
     urls: {
       min: 'http://placehold.it/32x32',
       medium: 'http://placehold.it/96x96'
     }
   },
-  name: 'User Name',
-  loading: false
+  name: '',
+  email: '',
+  loading: false,
+  uid: null
 }
+
 
 export default function user(state = initialState, action) {
 
@@ -24,9 +28,10 @@ export default function user(state = initialState, action) {
       return { ...state, loading: true }
 
     case GET_USER_DATA_SUCCESS:
-      debugger;
+      //debugger;
+      let user = action.payload[0] || {};
       console.log('USER: %o', action.payload);
-      return { ...state, loading: false }
+      return { ...state, ...user, loading: false }
 
     case GET_USER_DATA_FAIL:
       //console.log('USER: %o', action.payload);

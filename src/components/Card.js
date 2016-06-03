@@ -7,10 +7,11 @@ import FontAwesome from 'react-fontawesome'
 export default class Card extends Component {
   render() {
     const { user, data, info } = this.props.data
+    debugger;
     return <div className='card'>
         <div className='card__body'>
             <div className='card__info'>
-                <Avatar data={user.avatar} size='min' imgInline textInline>{user.name}</Avatar>
+                <Avatar data={user.avatar} size='thumbnail' imgInline textInline>{user.name}</Avatar>
             </div>
             <Separator />
             <div className='card__content'>

@@ -1,5 +1,8 @@
 import React, { PropTypes, Component } from 'react'
 import classNames from 'classnames'
+import { config, endpoints } from '../config'
+ 
+console.log('cfg >> ', config, endpoints);
 
 export default class Avatar extends Component {
   render() {
@@ -7,6 +10,7 @@ export default class Avatar extends Component {
     const captionDisplay = !this.props.children ? {
         display: 'none'
     } : {}
+    
     const imageCls = classNames({
         'avatar__image-wrapper': true,
         _min: size == 'min',
@@ -17,9 +21,12 @@ export default class Avatar extends Component {
         avatar__caption: true,
         _inline: !!textInline
     })
+    
+    console.log('%o %o %o %o %o %o', config, config.server, config.files.img[size], data.filename, size, data);
+    
     return <div className='avatar'>
         <div className={imageCls}>
-            <img src={data.urls[size]} className='avatar__image' />
+            <img src={config.server + config.files.img[size] + data.filename} className='avatar__image' />
         </div>
         <div className={textCls} style={captionDisplay}>
             {this.props.children}

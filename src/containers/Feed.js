@@ -24,20 +24,7 @@ export default class Feed extends Component {
     }
     return <div className='feed'>
         <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
-        <Card data={cardData} />
+        
     
     </div>
   }

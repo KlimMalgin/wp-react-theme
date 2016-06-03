@@ -4,7 +4,7 @@ import Avatar from './Avatar'
 
 export default class UserHead extends Component {
   render() {
-    const { user } = this.props.data
+    const { user } = this.props
     
     //cfg.files.img.thumbnail
     
@@ -26,5 +26,5 @@ export default class UserHead extends Component {
 }
 
 UserHead.propTypes = {
-  data: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired
 }
