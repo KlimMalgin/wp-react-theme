@@ -18,7 +18,7 @@ export default class UserPage extends Component {
     }
     
     render() {
-        debugger;
+        //debugger;
         return <div className='userpage'>
             <UserHead user={this.props.data} />
             <Feed />
