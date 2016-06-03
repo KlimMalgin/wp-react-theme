@@ -11,19 +11,16 @@ import Shadow from '../components/Shadow'
 
 import * as actions from '../actions'
 
+import { location } from '../utils'
 
 class App extends Component {
   
-  currentRoute () {
-    return this.props.location.pathname.split('/')[1];
-  }
-  
   childrenActions () {
-    return this.props.actions[this.currentRoute()] || {};
+    return this.props.actions[this::location.currentRoute()] || {};
   }
   
   childrenData () {
-    return this.props[this.currentRoute()] || {};
+    return this.props[this::location.currentRoute()] || {};
   }
   
   render() {
