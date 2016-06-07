@@ -6,7 +6,7 @@ import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 export const fields = [ 'firstName' ]
 
-class SimpleForm extends Component {
+class EditContentForm extends Component {
   render() {
     const {
       fields: { firstName },
@@ -18,15 +18,15 @@ class SimpleForm extends Component {
         <div>
           <label>First Name</label>
           <div>
-            <input type="text" placeholder="First Name" {...firstName}/>
+            <input type='text' placeholder='First Name' {...firstName}/>
           </div>
         </div>
         
         <div>
-          <button type="submit" disabled={submitting}>
+          <button type='submit' disabled={submitting}>
             {submitting ? <i/> : <i/>} Submit
           </button>
-          <button type="button" disabled={submitting} onClick={resetForm}>
+          <button type='button' disabled={submitting} onClick={resetForm}>
             Clear Values
           </button>
         </div>
@@ -35,7 +35,7 @@ class SimpleForm extends Component {
   }
 }
 
-SimpleForm.propTypes = {
+EditContentForm.propTypes = {
   fields: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   resetForm: PropTypes.func.isRequired,
@@ -43,6 +43,6 @@ SimpleForm.propTypes = {
 }
 
 export default reduxForm({
-  form: 'edit-content',
+  form: 'editcontentform',
   fields
-})(SimpleForm)
+})(EditContentForm);

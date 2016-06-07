@@ -3,8 +3,10 @@
  */
 
 import React, { PropTypes, Component } from 'react'
+import EditContentForm, { fields } from '../forms/EditContentForm'
 
-export default class UserPage extends Component {
+
+export default class EditContent extends Component {
     static propTypes = {
         store: PropTypes.object
     };
@@ -15,8 +17,10 @@ export default class UserPage extends Component {
     }
     
     render() {
+        console.log('>>', EditContentForm, fields);
         return <div className='editcontent'>
             <h1>I am EditContent!</h1>
+            <EditContentForm fields={fields} handleSubmit={() => console.log('HANDLE SUBMIT!')} onSubmit={() => console.log('ON SUBMIT!')} resetForm={() => console.log('RESET')} submitting={false} />
         </div>
     }
 }

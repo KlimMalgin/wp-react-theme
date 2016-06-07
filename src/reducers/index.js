@@ -8,5 +8,6 @@ export default combineReducers({
   user,
   search,
   shadow,
+  form: () => { return {}; },
   routing: routerReducer
 })
