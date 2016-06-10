@@ -5,7 +5,7 @@
 import React, { PropTypes, Component } from 'react'
 import UserHead from '../components/UserHead'
 import Feed from '../containers/Feed'
-import EditContent from '../containers/EditContent'
+import EditContent from '../containers/edit-content'
 
 import { location } from '../utils'
 
