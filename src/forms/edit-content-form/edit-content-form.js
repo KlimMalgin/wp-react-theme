@@ -4,6 +4,7 @@
 
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
+
 export const fields = [ 'firstName' ]
 
 class EditContentForm extends Component {
@@ -14,7 +15,7 @@ class EditContentForm extends Component {
       resetForm,
       submitting
       } = this.props
-    return (<form onSubmit={handleSubmit}>
+    return (<form className='edit-content-form' onSubmit={handleSubmit}>
         <div>
           <label>First Name</label>
           <div>

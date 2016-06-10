@@ -3,7 +3,7 @@
  */
 
 import React, { PropTypes, Component } from 'react'
-import EditContentForm, { fields } from '../forms/EditContentForm'
+import EditContentForm, { fields } from '../forms/edit-content-form'
 
 
 export default class EditContent extends Component {
