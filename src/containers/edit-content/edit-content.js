@@ -17,10 +17,10 @@ export default class EditContent extends Component {
     }
     
     render() {
-        console.log('>>', EditContentForm, fields);
+        console.log('>>', this.props.page);
         return <div className='edit-content'>
             <h1>I am EditContent!</h1>
-            <EditContentForm fields={fields} handleSubmit={() => console.log('HANDLE SUBMIT!')} onSubmit={() => console.log('ON SUBMIT!')} resetForm={() => console.log('RESET')} submitting={false} />
+            <EditContentForm fields={fields} handleSubmit={() => console.log('HANDLE SUBMIT!')} onSubmit={() => console.log('ON SUBMIT!', arguments, this)} resetForm={() => console.log('RESET')} submitting={false} />
         </div>
     }
 }

@@ -26,13 +26,13 @@ export default class UserPage extends Component {
     route (expected, paramIndex = 1) { return this::location.currentRoute(paramIndex) == expected; }
     
     renderPageContent () {
-        return this.route('user') && this.route('content', 3) ? <EditContent /> : <Feed/>;
+        return this.route('user') && this.route('content', 3) ? <EditContent page={this.props.page} /> : <Feed/>;
     }
     
     render() {
         //debugger;
         return <div className='userpage'>
-            <UserHead user={this.props.data} />
+            <UserHead user={this.props.page.data} />
             {this.renderPageContent()}
         </div>
     }

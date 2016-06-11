@@ -18,8 +18,18 @@ class App extends Component {
     return this.props.actions[this::location.currentRoute()] || {};
   }
   
+  /**
+   * Вернет объект с состоянием текущей страницы и смержеными 
+   * в него доп. данными. Например, состояние форм на странице 
+   */
   childrenData () {
-    return this.props[this::location.currentRoute()] || {};
+    let page = this.props[this::location.currentRoute()] || {};
+    return {
+      // Данные стора для текущей страницы
+      data: page,
+      // Состояние форм
+      form: this.props.form
+    };
   }
   
   render() {
@@ -31,7 +41,7 @@ class App extends Component {
       <Header search={search} actions={headerActions}>some header</Header>
       <Sidebar>sidebar block</Sidebar>
       <Content>
-        {React.cloneElement(this.props.children, { actions: this.childrenActions(), data: this.childrenData() })}
+        {React.cloneElement(this.props.children, { actions: this.childrenActions(), page: this.childrenData() })}
       </Content>
     </div>
   }
@@ -41,7 +51,8 @@ function mapStateToProps(state) {
   return {
     user: state.user,
     search: state.search,
-    shadow: state.shadow
+    shadow: state.shadow,
+    form: state.form
   }
 }
 
