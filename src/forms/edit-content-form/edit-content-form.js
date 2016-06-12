@@ -4,8 +4,11 @@
 
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
+import { Input } from 'react-bootstrap';
 
-export const fields = [ 'firstName' ]
+import '../../guide/input/input.less'
+
+export const fields = [ 'firstName', 'lastName' ]
 
 class EditContentForm extends Component {
   render() {
@@ -15,12 +18,19 @@ class EditContentForm extends Component {
       resetForm,
       submitting
       } = this.props
+      // TODO: 
+      // Название трека
+      // Описание трека
+      // Фоточка
+      // Файл / Ссылка на файл
     return (<form className='edit-content-form' onSubmit={handleSubmit}>
         <div>
-          <label>First Name</label>
+          <label>Имя</label>
           <div>
-            <input type='text' placeholder='First Name' {...firstName}/>
+            <Input type='text' placeholder='Имя' className='guide-input' {...firstName} />
           </div>
+          
+          
         </div>
         
         <div>
