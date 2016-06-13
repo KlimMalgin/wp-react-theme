@@ -4,10 +4,11 @@
 
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
-import { Input, Row, Col } from 'react-bootstrap';
+import { Input, Row, Col, Button } from 'react-bootstrap';
 
 import '../../guide/form/form.less'
 import '../../guide/input/input.less'
+import '../../guide/button/button.less'
 
 export const fields = [ 'firstName', 'lastName' ]
 
@@ -41,12 +42,10 @@ class EditContentForm extends Component {
           </div>
           
           <div>
-            <button type='submit' disabled={submitting}>
-              {submitting ? <i/> : <i/>} Submit
-            </button>
-            <button type='button' disabled={submitting} onClick={resetForm}>
-              Clear Values
-            </button>
+          
+            <Button type='submit' className='guide-button' disabled={submitting}>Submit</Button>
+            <Button type='button' className='guide-button' disabled={submitting} onClick={resetForm}>Clear Values</Button>
+            
           </div>
         </form>
       </Col>
