@@ -4,7 +4,7 @@
 
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
-import { Input } from 'react-bootstrap';
+import { Input, Row, Col } from 'react-bootstrap';
 
 import '../../guide/form/form.less'
 import '../../guide/input/input.less'
@@ -19,28 +19,39 @@ class EditContentForm extends Component {
       resetForm,
       submitting
       } = this.props
+    let proportions = {
+      empty: 2,
+      form: 8
+    }
       // TODO: 
       // Название трека
       // Описание трека
       // Фоточка
       // Файл / Ссылка на файл
-    return (<form className='edit-content-form guide-form' onSubmit={handleSubmit}>
-        <div>
-          <label>Имя</label>
+    return (
+    <Row>
+      <Col sm={proportions.empty} md={proportions.empty} />
+      <Col sm={proportions.form} md={proportions.form}>
+        <form className='edit-content-form guide-form' onSubmit={handleSubmit}>
           <div>
-            <Input type='text' placeholder='Имя' className='guide-input' {...firstName} />
+            <label>Имя</label>
+            <div>
+              <Input type='text' placeholder='Имя' className='guide-input' {...firstName} />
+            </div>
           </div>
-        </div>
-        
-        <div>
-          <button type='submit' disabled={submitting}>
-            {submitting ? <i/> : <i/>} Submit
-          </button>
-          <button type='button' disabled={submitting} onClick={resetForm}>
-            Clear Values
-          </button>
-        </div>
-      </form>
+          
+          <div>
+            <button type='submit' disabled={submitting}>
+              {submitting ? <i/> : <i/>} Submit
+            </button>
+            <button type='button' disabled={submitting} onClick={resetForm}>
+              Clear Values
+            </button>
+          </div>
+        </form>
+      </Col>
+      <Col sm={proportions.empty} md={proportions.empty} />
+    </Row>
     )
   }
 }
