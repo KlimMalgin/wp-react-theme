@@ -43,7 +43,7 @@ class EditContentForm extends Component {
           
           <div>
           
-            <Button type='submit' className='guide-button' disabled={submitting}>Submit</Button>
+            <Button type='submit' className='guide-button _submit' disabled={submitting}>Submit</Button>
             <Button type='button' className='guide-button' disabled={submitting} onClick={resetForm}>Clear Values</Button>
             
           </div>
