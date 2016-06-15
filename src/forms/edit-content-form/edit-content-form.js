@@ -8,16 +8,15 @@ import { Input, Row, Col, Button } from 'react-bootstrap';
 
 import '../../guide/form/form.less'
 import '../../guide/input/input.less'
-import '../../guide/button/button.less'
+import '../../guide/button'
 
-export const fields = [ 'firstName', 'lastName' ]
+export const fields = [ 'trackName', 'trackDescription', 'trackFoto', 'trackFile' ]
 
 class EditContentForm extends Component {
   render() {
     const {
-      fields: { firstName },
+      fields: { trackName, trackDescription, trackFoto, trackFile },
       handleSubmit,
-      resetForm,
       submitting
       } = this.props
     let proportions = {
@@ -34,19 +33,22 @@ class EditContentForm extends Component {
       <Col sm={proportions.empty} md={proportions.empty} />
       <Col sm={proportions.form} md={proportions.form}>
         <form className='edit-content-form guide-form' onSubmit={handleSubmit}>
-          <div>
-            <label>Имя</label>
-            <div>
-              <Input type='text' placeholder='Имя' className='guide-input' {...firstName} />
-            </div>
-          </div>
-          
-          <div>
-          
-            <Button type='submit' className='guide-button _submit' disabled={submitting}>Submit</Button>
-            <Button type='button' className='guide-button' disabled={submitting} onClick={resetForm}>Clear Values</Button>
+            <label>Название трека</label>
+            <Input type='text'  className='guide-input' {...trackName} />
             
+            <label>Описание трека</label>
+            <Input type='text'  className='guide-input' {...trackDescription} />
+            
+            <label>Загрузка фото</label>
+            <Input type='text' className='guide-input' {...trackFoto} />
+            
+            <label>Ссылка на трек</label>
+            <Input type='text'  className='guide-input' {...trackFile} />
+          
+          <div>
+            <Button type='submit' className='guide-button _submit' disabled={submitting}>Submit</Button>
           </div>
+        
         </form>
       </Col>
       <Col sm={proportions.empty} md={proportions.empty} />
