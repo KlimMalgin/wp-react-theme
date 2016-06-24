@@ -6,8 +6,8 @@ import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import { Input, Row, Col, Button } from 'react-bootstrap';
 
-import '../../guide/form/form.less'
-import '../../guide/input/input.less'
+import '../../guide/form'
+import '../../guide/input'
 import '../../guide/button'
 
 export const fields = [ 'trackName', 'trackDescription', 'trackFoto', 'trackFile' ]
