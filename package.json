@@ -39,6 +39,7 @@
     "bootstrap-less": "^3.3.8",
     "classnames": "^2.2.3",
     "compose-function": "^3.0.3",
+    "js-base64": "^2.1.9",
     "merge": "^1.2.0",
     "react": "^0.14.6",
     "react-bootstrap": "^0.28.3",
