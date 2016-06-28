@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { Modal } from 'react-bootstrap'
 
 import merge from 'merge'
 
@@ -34,8 +35,11 @@ class App extends Component {
   
   render() {
     const { search, shadow } = this.props
-    
-    const headerActions = merge(this.props.actions.search, this.props.actions.shadow)
+    //debugger;
+    const headerActions = merge(
+      this.props.actions.search, 
+      this.props.actions.shadow, 
+      this.props.actions.modal)
     return <div>
       <Shadow shadow={shadow} actions={this.props.actions.shadow} />
       <Header search={search} actions={headerActions}>some header</Header>
@@ -43,6 +47,14 @@ class App extends Component {
       <Content>
         {React.cloneElement(this.props.children, { actions: this.childrenActions(), page: this.childrenData() })}
       </Content>
+      <Modal keyboard show={this.props.modal.show} onHide={this.props.actions.modal.hideModal}>
+        <Modal.Header closeButton>
+          <Modal.Title id='contained-modal-title-lg'>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          some body
+        </Modal.Body>
+      </Modal>
     </div>
   }
 }
@@ -52,6 +64,7 @@ function mapStateToProps(state) {
     user: state.user,
     search: state.search,
     shadow: state.shadow,
+    modal: state.modal,
     form: state.form
   }
 }
@@ -61,6 +74,7 @@ function mapDispatchToProps(dispatch) {
     actions: {
       search: bindActionCreators(actions.search, dispatch),
       shadow: bindActionCreators(actions.shadow, dispatch),
+      modal: bindActionCreators(actions.modal, dispatch),
       user: bindActionCreators(actions.user, dispatch) 
     }
   }
